@@ -47,6 +47,7 @@ void print_python_bytes(PyObject *p)
    for (Py_ssize_t i = 0; i < PyBytes_GET_SIZE(p) && i < 10; ++i)
        printf("%02x ", (unsigned char)bytes_string[i]);
 
+
    printf("\n");
 }
 
@@ -58,5 +59,5 @@ void print_python_float(PyObject *p)
 
 int main(void)
 {
-	return 0;
+        return 0;
 }
