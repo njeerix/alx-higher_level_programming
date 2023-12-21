@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+
+"""
+This module defines a Square class with a private size attribute.
+"""
+
+
 class Node:
     """Class Node that defines a node of a singly linked list."""
     def __init__(self, data, next_node=None):
