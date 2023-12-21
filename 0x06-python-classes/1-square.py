@@ -12,9 +12,14 @@ print(f"<class '1-square.Square'>")
 print(f"{{'_Square__size': {mysquare._Square__size}}}")
 
 mysquare = Square(89)
-print(f"<clas '1-square.Square'>")
+print(f"<class '1-square.Square'>")
 print(f"{{'_Square__size': {mysquare._Square__size}}}")
 
+try:
+    print(mysquare.size)
+except AttributeError as e:
+    print(e)
+    
 try:
     print(mysquare._Square__size)
 except AttributeError as e:
