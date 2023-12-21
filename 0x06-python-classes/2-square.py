@@ -8,8 +8,7 @@ This module defines a Square class with a private size attribute.
 class Square:
     """Class Square that defines a square with a private size attribute."""
 
-
-    def __init__(self, size =0):
+    def __init__(self, size=0):
         """
         Instantiation with an optical size.
 
