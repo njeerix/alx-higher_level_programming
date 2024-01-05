@@ -1,12 +1,18 @@
 #!/usr/bin/python3
+"""This module contains the Rectangle class."""
+
+
 class Rectangle:
+    """A class to represent a rectangle."""
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
 
+    @property
     def width(self):
         return self.__width
 
+    @width.setter
     def width(self, value):
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -14,9 +20,11 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
+    @property
     def height(self):
         return self.__height
 
+    @height.setter
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -29,3 +37,13 @@ class Rectangle:
 
     def perimeter(self):
         return 2 * (self.__width + self.__height) if self.__width != 0 and self.__height != 0 else 0
+
+if __name__ == "__main__":
+    my_rectangle = Rectangle(2, 4)
+    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+
+    print("--")
+
+    my_rectangle.width = 10
+    my_rectangle.height = 3
+    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
