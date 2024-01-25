@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+log_file="apache-access.log"
+if [ -e "$log_file" ]; then
+    awk '{print $1, $9}' "$log_file"
+else
+   echo "Log file not found."
+fi

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+passwd_file="/etc/passwd"
+if [ -e "$passwd_file" ]; then
+   while IFS=: read -r username _ uid _ home _; do
+       echo "$username:$uid:$home"
+   done < "$passwd_file"
+else
+    echo "File does not exist."
+fi

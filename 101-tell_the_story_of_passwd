@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+passwd_file="/etc/passwd"
+if [ -e "$passwd_file" ]; then
+   while IFS=: read -r username _ uid gid desc home shell; do
+       user_info=$(getent passwd "$username")
+       passcode=$(echo "$user_info" | cut -d ':' -f 2)
+       echo "The user $username is part of the $gid gang, lives in $home and rides $shell."
+       echo "$uid's place is protected by the passcode $passcpde, more info about the user here: $desc"
+    done < "$passwd_file"
+else
+   echo "File does not exist."
+fi
