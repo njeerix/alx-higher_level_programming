@@ -7,8 +7,12 @@ Use hbtn_0d_usa;
 -- Create the table states only if it does not already exist
 CREATE TABLE IF NOT EXISTS states (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(256) NOT NULL
+    name VARCHAR(256) NOT NULL,
+    UNIQUE KEY unique_name (name)
 );
 
--- Insert sample data into the states table
+-- Clear any existing data from the states table
+DELETE FROM states;
+
+-- Insert sample data into the states table, ignoring duplicates
 INSERT INTO states (name) VALUES ('California'), ('Arizona'), ('Texas');
