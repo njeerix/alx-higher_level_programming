@@ -1,11 +1,9 @@
 #!/usr/bin/node
 
-// Get the first argument passed to the script
-const firstArg = process.argv[2];
-
-// Use console.log(...) to print all output
-if (!firstArg) {
-  console.log('No Argument');
+if (process.argv.length === 2) {
+  console.log('No argument');
+} else if (process.argv.length === 3) {
+  console.log('Arguments found');
 } else {
-  console.log(firstArg);
+  console.log('Arguments found');
 }
