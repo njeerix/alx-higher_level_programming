@@ -16,7 +16,7 @@ def filter_states(username, password, database):
         # Create a cursor object using cursor() method
         cursor = db.cursor()
         # Execute SQL queryy to select all states with a name starting with 'N'
-        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
+        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' OR name LIKE 'n%' ORDER BY id")
         # Fetch all rows from the result set
         rows = cursor.fetchall()
         # Display results
