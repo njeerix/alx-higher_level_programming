@@ -7,6 +7,7 @@ Lists all cities of a state from the database hbtn_0e_4_usa
 import MySQLdb
 import sys
 
+
 def filter_cities(username, password, database, state_name):
     """Lists all cities of a state"""
     try:
