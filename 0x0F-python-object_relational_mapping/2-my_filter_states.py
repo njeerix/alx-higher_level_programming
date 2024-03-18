@@ -16,7 +16,8 @@ def filter_states(username, password, database, state_name):
         # Create a cursor object using cursor() method
         cursor = db.cursor()
         # Execute SQL queryy to select all states with a name starting with 'N'
-        cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id", (state_name,))
+        cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id",
+                       (state_name,))
         # Fetch all rows from the result set
         rows = cursor.fetchall()
         # Display results
@@ -27,6 +28,7 @@ def filter_states(username, password, database, state_name):
         db.close()
     except MySQLdb.Error as e:
         print("MySQL Error:", e)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
