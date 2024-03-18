@@ -23,6 +23,10 @@ if __name__ == "__main__":
             'mysql+mysqldb://{}:{}@localhost/{}'.format(
                 sys.argv[1], sys.argv[2], sys.argv[3]))
 
+        # Pass the engine to relationship_state.py for metadata creation
+        from relationship_state import Base, State
+        Base.metadata.create_all(bind=engine, extend_existing=True)
+
         # Bind the engine to the Base class
         Base.metadata.create_all(engine)
 
