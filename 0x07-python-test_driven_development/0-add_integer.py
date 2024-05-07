@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+
+"""
+This module provides a function to add two integers.
+"""
 def add_integer(a, b=None):
     """
     Adds two integers.
